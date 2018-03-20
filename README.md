@@ -53,6 +53,21 @@ Let's dive into typing hints and see...
     ```  
 
 - Use `--ignore-missing-imports` to remove messages about missing stubs.
+- Use `--strict-optional`
+- Use the docs: https://mypy.readthedocs.io/en/latest
+    - But beware, it still has examples for Python type hinting into comments, so when you see:
+    ```
+    class A:
+        def __init__(self) -> None:
+            self.count = None  # type: int
+    ```  
+    think:
+    ```
+    class A:
+        def __init__(self) -> None:
+            self.count: int = None
+    ```
+
  
 
 ## PyCharm plug
@@ -71,7 +86,11 @@ __init__.py package files.
 If you get messages like `error: No library stub file for module 'pytest'`, try `--ignore-missing-imports`   
 or append `# type: ignore`  after these imports.
 
-Library stubs are typed libraries used by MyPy that define types for many known which do not have typoe hinting yet.
+Library stubs are typed libraries used by MyPy that define types for many known which do not have type hinting yet.
+
+Fix any warnings. There should be none if the code has no type hinting yet.
+
+Add the `--strict-optional` option and fix any new warning.
 
 Then, add type hints gradually.
 
