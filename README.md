@@ -7,21 +7,15 @@ Are _you_ a type lover?  Is it at all necessary?
 
 Let's dive into typing hints and see...
 
-
-## Examples
-
-- [Simple types](simple_types.ipynb)
-- [Simple collections](simple_collections.py)
-- [Type inference 1](type_inference_1.py)
-- [Type inference 2](type_inference_2.py)
-- [reveal_type](reveal_type.py)
-- [Iterators](iterators.py)
-- [Classes](classes_and_some_beers.py)
-- [Duck type and classes, beer typing](classes_structural_subtyping_and_some_more_beers.py)
-- [Generics](classes_generics.py)
-- [Linting 1](linting_1.py)
-- [Linting 2](linting_2.py)
-
+-------------------------------------------------------------------------------
+- TL;DR
+- Examples
+- Tricks
+    - PyCharm plug
+- Introducing into an existing project
+    - Tips
+- About covariance and contravariance
+-------------------------------------------------------------------------------
 
 # TL;DR
 
@@ -35,7 +29,24 @@ Let's dive into typing hints and see...
 - prevent logic bugs
 - slow down your code, typing hints are ignored by the interpreter 
 
-## Tricks
+
+# Examples
+
+- [Simple types](simple_types.ipynb)
+- [Type inference](type_inference.py)
+- [Collections covariance, built-in types](collections_covariance_buit_ins.py)
+- [Collections covariance, classes](collections_covariance_classes.py)
+- [None](none.py)
+- [reveal_type](reveal_type.py)
+- [Generators](generators.py)
+- [Classes](classes_and_some_beers.py)
+- [Duck type and classes, beer typing](classes_structural_subtyping_and_some_more_beers.py)
+- [Generics](classes_generics.py)
+- [Linting 1](linting_1.py)
+- [Linting 2](linting_2.py)
+
+
+# Tricks
 - use typing module types instead of literals. Ex.: 
     ```
     # No    
@@ -50,7 +61,7 @@ Let's dive into typing hints and see...
     # Best: 
     def Foo(bar: List[int]) -> None:
         pass
-    ```  
+    ```
 
 - Use `--ignore-missing-imports` to remove messages about missing stubs.
 - Use `--strict-optional`
@@ -67,11 +78,10 @@ Let's dive into typing hints and see...
         def __init__(self) -> None:
             self.count: int = None
     ```
-
  
-
 ## PyCharm plug
 PyCharm has an integrated equivalent to MyPy. Many code inspections are displayed directly while editing.
+
 I find that both work well together as MyPY can scan code _behind your back_ and run in the CI.
 
 PyCharm code inspections also cover a lot (but not all) of what Pylint does. 
@@ -129,7 +139,7 @@ It turns out such an argument acts contravariantly, whereas the intuitive answer
 doesn't mutate its argument!) requires the argument to act covariantly. A longer introduction to these concepts can be
 found on Wikipedia [wiki-variance] and in PEP 483; here we just show how to control a type checker's behavior.
 
-**By default generic types are considered invariant in all type variables**, which means that values for variables annotated
-with types like List[Employee] must exactly match the type annotation -- no subclasses or superclasses of the type
-parameter (in this example Employee) are allowed.
+**By default generic types are considered invariant in all type variables**, which means that values for variables 
+annotated with types like List[Employee] must exactly match the type annotation -- no subclasses or superclasses of the 
+type parameter (in this example Employee) are allowed.
 

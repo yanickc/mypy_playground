@@ -1,4 +1,9 @@
-# Iterators
+"""
+Type hints covers many Python constructs, such as Iterator, Sized, async/await, etc.
+
+See also: classes_structural_subtyping_and_some_more_beers.py
+
+"""
 
 import itertools
 from typing import Iterator

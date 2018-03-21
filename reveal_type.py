@@ -1,6 +1,8 @@
-# To find out what type MyPy infers for an expression anywhere in
-# your program, wrap it in reveal_type.  MyPy will print an error
-# message with the type; remove it again before running the code.
+"""
+To find out what type MyPy infers for an expression anywhere in
+your program, wrap it in reveal_type.  MyPy will print an error
+message with the type; remove it again before running the code.
+"""
 
 nodes = ['a', 'b', 'b']
 stuff = {'something': [1, 2, 3], 'something_else': {}}

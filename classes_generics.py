@@ -1,8 +1,10 @@
 """
 Why make it simple?...
 
-Python, being dynamically typed, has many generic constructs. See simple_collections.py
+Python, being dynamically typed, has many generic constructs. See collections_covariance_buit_ins.py
 For "generic" classes, we now need a way to describe generics.
+
+(╯°□°）╯︵ ┻━┻
 
 
 From http://mypy.readthedocs.io/en/stable/generics.html:
@@ -20,15 +22,15 @@ T = TypeVar('T')
 
 
 class Stack(Generic[T]):
+    def pop(self) -> T:
+        return self.items.pop()
+
     def __init__(self) -> None:
         # Create an empty list with items of type T
-        self.items = []  # type: List[T]
+        self.items: List[T] = []
 
     def push(self, item: T) -> None:
         self.items.append(item)
-
-    def pop(self) -> T:
-        return self.items.pop()
 
     def empty(self) -> bool:
         return not self.items
@@ -40,5 +42,6 @@ stack.push(2)
 stack.pop()
 stack.push('x')  # error: Argument 1 to "push" of "Stack" has incompatible type "str"; expected "int"
 
-# All or nothing affair
+# All or nothing affair, once we create a generic type,
+# we need to "instanciate" its type to make it "concrete"
 stack2 = Stack()  # error: Need type annotation for 'stack2'

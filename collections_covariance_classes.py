@@ -1,15 +1,21 @@
 """
-Mypy will infer the first assignment as the variable's type
+Collections type invariance. Built-in collections follow the
+usual class hierarchy (Liskov) substitution principles.
 """
 from typing import List
 
 
 class MusicBand:
+    def __init__(self, name) -> None:
+        self.name = name
+
     def __str__(self) -> str:
         return self.name
 
+
+class Orchestra(MusicBand):
     def __init__(self, name) -> None:
-        self.name = name
+        super().__init__(name)
 
 
 class CarModel:
@@ -30,7 +36,7 @@ def my_eclectic_function(groups: List[MusicBand], cars: List[CarModel]):
         print(c, end=" ")
 
 
-groups = [MusicBand("65daysofstatic"), MusicBand("Russian Circles"), MusicBand("Michel Louvain")]
+groups = [MusicBand("65daysofstatic"), MusicBand("Russian Circles"), Orchestra("OM")]
 cars = [CarModel("Honda", "Civic", 2015), CarModel("Toyota", "Matrix", 2007)]
 
 my_eclectic_function(groups, cars)

@@ -1,7 +1,10 @@
-# ...
-# but MyPy is not a true linter.
-# Here, it does not catch this hidden closure...
+"""
 
+... but MyPy is not a true linter.
+
+Here, it does not catch this hidden closure.
+
+"""
 
 LIST_OF_PRINTERS = []
 for i in [1, 2, 3]:
@@ -14,7 +17,6 @@ for i in [1, 2, 3]:
 for func in LIST_OF_PRINTERS:
     func()
 
-
 # But Pylint does:
 #
 # > pylint linting_2.py
@@ -24,5 +26,3 @@ for func in LIST_OF_PRINTERS:
 #
 # -----------------------------------
 # Your code has been rated at 8.57/10
-
-

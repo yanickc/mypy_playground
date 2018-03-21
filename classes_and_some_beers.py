@@ -1,5 +1,5 @@
 """
-No surprise here, straightforward class inheritance is checked.
+No surprise here, straightforward class inheritance (Liskov rule) is checked.
 And good beer...
 """
 
@@ -62,7 +62,7 @@ enjoy(good_beer)
 # Reassignment
 #
 # Each name within a function only has a single ‘declared’ type.
-# This is related to invariance. See READM.md
+# This is related to invariance. See README.md
 
 good_beer = WheatBeer()  # error: Incompatible types in assignment (expression has type "WheatBeer", variable has type "IndiaPaleAle")
 
