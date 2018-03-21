@@ -32,18 +32,18 @@ Let's dive into typing hints and see...
 
 # Examples
 
-- [Simple types](simple_types.ipynb)
-- [Type inference](type_inference.py)
-- [Collections covariance, built-in types](collections_covariance_buit_ins.py)
-- [Collections covariance, classes](collections_covariance_classes.py)
-- [None](none.py)
-- [reveal_type](reveal_type.py)
-- [Generators](generators.py)
-- [Classes](classes_and_some_beers.py)
-- [Duck type and classes, beer typing](classes_structural_subtyping_and_some_more_beers.py)
-- [Generics](classes_generics.py)
-- [Linting 1](linting_1.py)
-- [Linting 2](linting_2.py)
+- [Simple types](examples/simple_types.ipynb)
+- [Type inference](examples/type_inference.py)
+- [Collections covariance, built-in types](examples/collections_covariance_buit_ins.py)
+- [Collections covariance, classes](examples/collections_covariance_classes.py)
+- [None](examples/none.py)
+- [reveal_type](examples/reveal_type.py)
+- [Generators](examples/generators.py)
+- [Classes](examples/classes_and_some_beers.py)
+- [Duck type and classes, beer typing](examples/classes_structural_subtyping_and_some_more_beers.py)
+- [Generics](examples/classes_generics.py)
+- [Linting 1](examples/linting_1.py)
+- [Linting 2](examples/linting_2.py)
 
 
 # Tricks
