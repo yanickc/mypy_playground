@@ -23,7 +23,7 @@ print(n)
 # See README.md -- About covariance section.
 # See also `collections_covariance_buit_ins.py`
 
-arr = []  # error: Need type annotation for 'arr'
+arr = []  # error: Need type annotation for 'arr' (hint: "arr: List[<type>] = ...")
 arr = [1, 2, 3]
 
 arr2: List = []

@@ -43,5 +43,5 @@ stack.pop()
 stack.push('x')  # error: Argument 1 to "push" of "Stack" has incompatible type "str"; expected "int"
 
 # All or nothing affair, once we create a generic type,
-# we need to "instanciate" its type to make it "concrete"
+# we need to "instantiate" its type to make it "concrete"
 stack2 = Stack()  # error: Need type annotation for 'stack2'

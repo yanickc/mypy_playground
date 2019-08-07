@@ -11,7 +11,6 @@ for i in [1, 2, 3]:
     def printer():
         print(i)
 
-
     LIST_OF_PRINTERS.append(printer)
 
 for func in LIST_OF_PRINTERS:

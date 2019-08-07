@@ -12,6 +12,6 @@ def f(obj1, obj2):
     pass
 
 
-reveal_type(nodes)  # error: Revealed type is 'builtins.list[builtins.str*]'
-reveal_type(stuff)  # error: Revealed type is 'builtins.dict[builtins.str*, typing.Collection*[builtins.int*]]'
-reveal_type(f)  # error: Revealed type is 'def (obj1: Any, obj2: Any) -> Any'
+reveal_type(nodes)  # note: Revealed type is 'builtins.list[builtins.str*]'
+reveal_type(stuff)  #  note: Revealed type is 'builtins.dict[builtins.str*, typing.Collection*[builtins.int*]]'
+reveal_type(f)  # note: Revealed type is 'def (obj1: Any, obj2: Any) -> Any'
